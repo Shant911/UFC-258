@@ -51,10 +51,21 @@
     background-color: var(--dark-color);
     color: #fff;
   }
+
+  .bg-darkufc {
+    background-color: var(--black-color);
+    color: #fff;
+  }
+  
   
   .bg-light,
   .btn-light {
     background-color: var(--light-color);
+    color: #333;
+  }
+
+  .bg-lightufc {
+    background-color: var(whitesmoke);
     color: #333;
   }
   
@@ -122,7 +133,7 @@
   }
   
   .alert-success {
-    background-color: var(--success-color);
+    background-color: var(--black-color);
     color: #fff;
   }
   

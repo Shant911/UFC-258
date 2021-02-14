@@ -7,6 +7,8 @@
   --light-color: #f4f4f4;
   --success-color: #5cb85c;
   --error-color: #d9534f;
+  --black-color: black;
+  --white-color: whitesmoke;
 }
 
 * {
@@ -15,8 +17,8 @@
   margin: 0;
 }
 
-body {
-  font-family: 'Lato', sans-serif;
+body{
+  overflow: visible;
   color: #333;
   line-height: 1.6;
 }
@@ -28,6 +30,11 @@ ul {
 a {
   text-decoration: none;
   color: #333;
+}
+
+.aufc{
+  text-decoration: none;
+  color: whitesmoke
 }
 
 h1,
@@ -59,10 +66,11 @@ pre {
 
 /* Navbar */
 .navbar {
-  background-color: var(--primary-color);
+  background-color: var(--black-color);
   color: #fff;
   height: 70px;
 }
+
 
 .navbar ul {
   display: flex;
@@ -85,8 +93,8 @@ pre {
 /* Showcase */
 .showcase {
   height: 400px;
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: var(--white-color);
+  color: rgb(12, 10, 10);
   position: relative;
 }
 
@@ -140,13 +148,13 @@ pre {
 .showcase::after {
   content: '';
   position: absolute;
-  height: 100px;
+  height: 110px;
   bottom: -70px;
   right: 0;
   left: 0;
-  background: #fff;
+  background:black;
   transform: skewY(-3deg);
-  -webkit-transform: skewY(-3deg);
+  -webkit-transform: skewY(2deg);
   -moz-transform: skewY(-3deg);
   -ms-transform: skewY(-3deg);
 }
@@ -208,7 +216,7 @@ pre {
   transform: translateY(-15px);
 }
 
-/* Features */
+/* UFC258 */
 .features-head img,
 .docs-head img {
   width: 200px;
@@ -374,3 +382,244 @@ pre {
     width: 300px;
   }
 }
+
+/* eye dissapearance  */
+  @media only screen and (max-width: 775px) {
+
+    .pupil {
+     display: none;
+     max-width: 0%;
+    }
+
+    .ball {
+      max-width: 0%;
+    }
+  }
+
+
+@keyframes move-eye-skew {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+  }
+  25%, 44% {
+    transform: none;
+  }
+  50%, 60% {
+    transform: translateX(68px) translateY(-50px) skewX(2deg) skewY(7deg) scale(0.95);
+  }
+  66%, 100% {
+    transform: none;
+  }
+}
+
+/* 
+@keyframes move-eye-skew {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+  }
+  25%, 44% {
+    transform: none;
+  }
+  50%, 60% {
+    transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
+  }
+  66%, 100% {
+    transform: none;
+  }
+}
+*/
+
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #A4F98E 100%);
+}
+.ball:after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+}
+
+.pupil {
+  width: 40%;
+  height: 40%;
+  margin: 30%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #208ab4 0%, #20B2AA 30%, #20B2AA 100%);
+  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+  position: absolute;
+  animation: move-eye-skew 10s ease-out infinite ;
+}
+.pupil:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 37.5%;
+  height: 37.5%;
+  border-radius: 50%;
+  top: 31.25%;
+  left: 31.25%;
+  background: black;
+}
+.pupil:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 31.25%;
+  height: 31.25%;
+  border-radius: 50%;
+  top: 18.75%;
+  left: 18.75%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ball .shadow {
+position: absolute;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+transform: rotateX(90deg) translateZ(-150px);
+  z-index: -1;
+}
+.stage {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  margin: 20px;
+  margin-left: 165px;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform: rotateY(0.01deg);
+  
+}
+
+	/* 007 james */
+	.ball007 {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 30%;
+    position: relative;
+    transform-style: preserve-3d;
+    background-size: auto 100%;
+    -webkit-animation: move-map 120s infinite linear;
+    -moz-animation: move-map 120s infinite linear;
+    -o-animation: move-map 120s infinite linear;
+    -ms-animation: move-map 120s infinite linear;
+    animation: move-map 120s infinite linear;
+    viewport-fit: 1vw;
+    animation: slideInFromLeft 1s ease-in;
+  }
+  
+  .ball007:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    box-shadow: none;
+    z-index: 2;
+  }
+  
+  .ball007:after {
+    content: "";
+    position: absolute;
+    border-radius: 30%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: blur(0);
+    opacity: 0.3;
+    background: none;
+    viewport-fit: 1vw;
+  }
+  
+  .ball007 .shadow007 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    -webkit-transform: rotateX(90deg) translateZ(-150px);
+    -moz-transform: rotateX(90deg) translateZ(-150px);
+    -ms-transform: rotateX(90deg) translateZ(-150px);
+    -o-transform: rotateX(90deg) translateZ(-150px);
+    transform: rotateX(90deg) translateZ(-150px);
+    z-index: -1;
+  }
+  
+  
+  .stage007 {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    margin: 20px;
+    margin-left: 400px;
+    -webkit-perspective: 3500px;
+    -moz-perspective: 3500px;
+    -ms-perspective: 3500px;
+    -o-perspective: 3500px;
+    perspective: 3500px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    width: 40vw;
+  }
+  
+  @-moz-keyframes move-map {
+    0% {
+      background-position: 0px; }
+  
+    100% {
+      background-position: -3500px; } }
+  
+  @-webkit-keyframes move-map {
+    0% {
+      background-position: 0px; }
+    100% {
+      background-position: -3500px; }
+  }
+  
+  
+  @-o-keyframes move-map {
+    0% {
+      background-position: 0px; }
+  
+    100% {
+      background-position: -3500px; } }
+  
+  @-ms-keyframes move-map {
+    0% {
+      background-position: 0px; }
+  
+    100% {
+      background-position: -3500px; } }
+  
+  @keyframes move-map {
+    0% {
+      background-position: 0px; }
+  
+    100% {
+      background-position: -3500px; } }
