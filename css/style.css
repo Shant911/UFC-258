@@ -18,7 +18,6 @@
 }
 
 body{
-  overflow: visible;
   color: #333;
   line-height: 1.6;
 }
@@ -526,7 +525,6 @@ transform: rotateX(90deg) translateZ(-150px);
     -ms-animation: move-map 120s infinite linear;
     animation: move-map 120s infinite linear;
     viewport-fit: 1vw;
-    animation: slideInFromLeft 1s ease-in;
   }
   
   .ball007:before {
